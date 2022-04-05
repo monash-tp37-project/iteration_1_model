@@ -88,6 +88,37 @@ def futher_process_string(text):
         return final_string_list
 
 
+
+# input is a list of lists containing strings
+def remove_all_non_utf8_characters(news_text_list):
+
+    # the final cleaned list of lists
+    cleaned_news_list = []
+
+    for article in news_text_list:
+
+        cleaned_article = []
+
+        for word in article:
+
+            clean_word = ''
+
+            for char in word:
+
+                if char.isalnum():
+
+                    clean_word = clean_word + char
+
+            if len(clean_word) > 0:
+
+                cleaned_article.append(clean_word)
+
+        cleaned_news_list.append(cleaned_article)
+
+    # return the final list
+    return cleaned_news_list
+
+
 # main block to check if the code is working the way you expect
 if __name__ == '__main__':
     pass                    # pass in case there is no code

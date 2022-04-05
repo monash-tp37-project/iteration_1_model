@@ -32,7 +32,7 @@ import unicodedata
 import warnings
 warnings.filterwarnings("ignore")
 
-# import files
+# import file which has all text pre processing functions
 from text_pre_processing import *     # import classes and functions
 
 
@@ -45,7 +45,7 @@ if __name__ == '__main__':
     # set current directory
     current_dir = os.getcwd()
 
-    # load the model from disk
+    # load in the trained vectorizer
     filename = f'{current_dir}/vectorizer.pk'
     vectorizer = pickle.load(open(filename, 'rb'))
 
